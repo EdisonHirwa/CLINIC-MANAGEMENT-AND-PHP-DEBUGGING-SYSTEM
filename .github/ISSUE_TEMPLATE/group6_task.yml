@@ -1,0 +1,147 @@
+name: Group 6 Task
+description: Create, extend, test, or debug the Group 6 Clinic Management and PHP Debugging System
+title: "[Group 6]: "
+labels:
+  - group-6
+  - clinic-management
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Group 6: Clinic Management and PHP Debugging System
+
+        Use this form for work on the strict OOP PHP 8.2+ clinic management application. Architectural boundaries include the core entities `Patient`, `Doctor`, `Nurse`, `Appointment`, `MedicalRecord`, `Prescription`, `Medicine`, `Payment`, `Clinic`, and `Notification`; abstract classes, interfaces, and polymorphism; defensive validation with custom exceptions; and a structured 15-bug debugging and regression-testing scenario. Keep domain models, service logic, validation, and tests separated according to the assigned member role.
+
+  - type: input
+    id: task-title
+    attributes:
+      label: Task Title
+      description: Provide a concise, action-oriented title for this task.
+      placeholder: "Implement appointment conflict validation"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: assignee-member-role
+    attributes:
+      label: Assignee Role
+      description: Select the member role primarily responsible for this task.
+      options:
+        - "Member 1: Core Entity Models (Clinic, Patient, Staff hierarchy)"
+        - "Member 2: Clinical Domain Models (MedicalRecord, Prescription, Medicine)"
+        - "Member 3: Operational Service Layer (Appointment & Scheduling Engine)"
+        - "Member 4: Financial & Notification Services (Payment, Notification & Interfaces)"
+        - "Member 5: Advanced OOP Architecture (Interfaces, Abstraction & Polymorphism)"
+        - "Member 6: Input Validation, Defensive Programming & Custom Exceptions"
+        - "Member 7: Deliberate Bug Suite Implementation (15 Structured Bugs)"
+        - "Member 8: Testing Suite, Bug Fixes & Regression Validation"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: task-category
+    attributes:
+      label: Task Category
+      description: Choose the category that best describes the work.
+      options:
+        - Core OOP
+        - Business Logic
+        - Interfaces
+        - Validation/Exceptions
+        - Bug Injection
+        - Testing/QA
+        - Documentation
+    validations:
+      required: true
+
+  - type: textarea
+    id: implementation-requirements
+    attributes:
+      label: Detailed Implementation Requirements
+      description: Describe the expected behavior, design, acceptance criteria, and affected classes or services.
+      placeholder: |
+        ## Scope
+        - Classes/files affected: [list classes and files]
+        - Related bug number(s), if applicable: [BUG-01 to BUG-15]
+
+        ## OOP design
+        - Properties and state: [property names, types, defaults, and invariants]
+        - Methods and behavior: [method names, parameters, return types, and side effects]
+        - Type declarations: [parameter types, return types, nullable types, and promoted properties]
+        - Visibility modifiers: [private/protected/public members and why]
+        - Relationships: [inheritance, interfaces, composition, or polymorphism]
+        - Abstract members/contracts: [abstract classes and required implementations]
+
+        ## Validation and errors
+        - Valid inputs and expected outputs: [examples]
+        - Invalid inputs and expected custom exceptions: [examples]
+        - Defensive checks and boundary cases: [details]
+
+        ## Testing
+        - Unit/functional scenarios: [list cases]
+        - Regression expectation: [behavior that must remain unchanged]
+      render: markdown
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: definition-of-done
+    attributes:
+      label: Definition of Done (DoD)
+      description: Confirm each item before requesting review.
+      options:
+        - label: '`declare(strict_types=1);` is present in every affected PHP file.'
+          required: true
+        - label: 'Encapsulation is maintained: properties are not exposed unnecessarily and visibility modifiers are intentional.'
+          required: true
+        - label: 'All parameters, properties, and return values have appropriate type declarations.'
+          required: true
+        - label: 'Inheritance, interfaces, abstract classes, and polymorphism follow the approved design.'
+          required: true
+        - label: 'Input validation and defensive programming cover invalid, missing, and boundary values.'
+          required: true
+        - label: 'Custom exceptions are used where domain or validation errors require them.'
+          required: true
+        - label: 'No unrelated behavior or public APIs were changed.'
+          required: true
+        - label: 'Unit and functional tests cover the new or changed behavior.'
+          required: true
+        - label: 'The full test suite passes, including relevant regression tests.'
+          required: true
+        - label: 'The deliberate 15-bug scenario is documented and its expected state is clear, where applicable.'
+          required: true
+        - label: 'PHP runs with zero warnings, notices, and avoidable errors.'
+          required: true
+        - label: 'Code review requirements and project documentation are complete.'
+          required: true
+    validations:
+      required: true
+
+  - type: textarea
+    id: testing-evidence
+    attributes:
+      label: Testing Evidence
+      description: Record the commands run and summarize the results.
+      placeholder: |
+        Commands:
+        - `vendor/bin/phpunit`
+        - `php -l path/to/changed-file.php`
+
+        Result: [pass/fail and relevant output]
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context and Reproduction Steps
+      description: Add reproduction steps, expected and actual behavior, screenshots, logs, related issues, or implementation notes.
+      placeholder: |
+        Reproduction steps:
+        1. [Step]
+        2. [Step]
+
+        Expected behavior: [describe the expected result]
+        Actual behavior: [describe the observed result]
+    validations:
+      required: false
